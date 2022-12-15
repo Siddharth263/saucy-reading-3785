@@ -1,5 +1,6 @@
 package com.app.exception;
 
+@SuppressWarnings("serial")
 public class ProductsException extends Exception{
 
 	public ProductsException() {

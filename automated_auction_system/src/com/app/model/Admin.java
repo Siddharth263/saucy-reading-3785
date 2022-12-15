@@ -1,33 +1,22 @@
 package com.app.model;
 
-public class Buyers {
-	private int user_id;
+public class Admin {
 	private String name;
 	private String email;
-	private String mobile;
 	private String password;
-	public Buyers() {
+	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Buyers(int user_id, String name, String email, String mobile, String password) {
+	public Admin(String name, String email, String password) {
 		super();
-		this.user_id = user_id;
 		this.name = name;
 		this.email = email;
-		this.mobile = mobile;
 		this.password = password;
 	}
 	@Override
 	public String toString() {
-		return "Buyers [user_id=" + user_id + ", name=" + name + ", email=" + email + ", mobile=" + mobile
-				+ ", password=" + password + "]";
-	}
-	public int getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+		return "Admin [name=" + name + ", email=" + email + ", password=" + password + "]";
 	}
 	public String getName() {
 		return name;
@@ -40,12 +29,6 @@ public class Buyers {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getMobile() {
-		return mobile;
-	}
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
 	}
 	public String getPassword() {
 		return password;

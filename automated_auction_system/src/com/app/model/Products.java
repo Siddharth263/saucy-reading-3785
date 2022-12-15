@@ -1,48 +1,64 @@
 package com.app.model;
 
 public class Products {
-	private int prod_id;
-	private String prod_name;
-	private int seller_id;
+	private int prodId;
+	private int sellerId;
+	private String prodName;
+	private String category;
 	private int price;
+	private String status;
+	public Products(int prodId, int sellerId, String prodName, String category, int price, String status) {
+		super();
+		this.prodId = prodId;
+		this.sellerId = sellerId;
+		this.prodName = prodName;
+		this.category = category;
+		this.price = price;
+		this.status = status;
+	}
 	public Products() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Products(int prod_id, String prod_name, int seller_id, int price) {
-		super();
-		this.prod_id = prod_id;
-		this.prod_name = prod_name;
-		this.seller_id = seller_id;
-		this.price = price;
-	}
 	@Override
 	public String toString() {
-		return "Products [prod_id=" + prod_id + ", prod_name=" + prod_name + ", seller_id=" + seller_id + ", price="
-				+ price + "]";
+		return "Products [prodId=" + prodId + ", sellerId=" + sellerId + ", prodName=" + prodName + ", category="
+				+ category + ", price=" + price + ", status=" + status + "]";
 	}
-	public int getProd_id() {
-		return prod_id;
+	public int getProdId() {
+		return prodId;
 	}
-	public void setProd_id(int prod_id) {
-		this.prod_id = prod_id;
+	public void setProdId(int prodId) {
+		this.prodId = prodId;
 	}
-	public String getProd_name() {
-		return prod_name;
+	public int getSellerId() {
+		return sellerId;
 	}
-	public void setProd_name(String prod_name) {
-		this.prod_name = prod_name;
+	public void setSellerId(int sellerId) {
+		this.sellerId = sellerId;
 	}
-	public int getSeller_id() {
-		return seller_id;
+	public String getProdName() {
+		return prodName;
 	}
-	public void setSeller_id(int seller_id) {
-		this.seller_id = seller_id;
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public int getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }

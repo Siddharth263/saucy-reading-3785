@@ -1,5 +1,6 @@
 package com.app.exception;
 
+@SuppressWarnings("serial")
 public class BuyersException extends Exception{
 
 	public BuyersException() {
