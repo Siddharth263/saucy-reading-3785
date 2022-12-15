@@ -5,4 +5,4 @@
 
 # ER Diagram
 
-<img src="./images/er-daigram.png" alt="er-daigram">
+<img src="/images/er-diagram.png" alt="er-daigram">
