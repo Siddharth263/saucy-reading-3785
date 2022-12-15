@@ -5,4 +5,4 @@
 
 # ER Diagram
 
-<img src="./images/er-daigram.png" alt="er-daigram">
+<img src="https://github.com/Siddharth263/saucy-reading-3785/blob/main/images/er-diagram.png" alt="er-daigram">
