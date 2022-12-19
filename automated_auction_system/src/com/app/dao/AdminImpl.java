@@ -69,7 +69,7 @@ public class AdminImpl implements AdminDAO{
 			PreparedStatement ps = conn.prepareStatement("Select * from users");
 			ResultSet rs = ps.executeQuery();
 			while(rs.next() && rs!=null) {
-				Buyers b = new Buyers(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+				Buyers b = new Buyers(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 				list.add(b);
 			}
 		} catch (SQLException e) {
@@ -87,7 +87,7 @@ public class AdminImpl implements AdminDAO{
 			PreparedStatement ps = conn.prepareStatement("Select * from sellers");
 			ResultSet rs = ps.executeQuery();
 			while(rs!=null && rs.next()) {
-				Sellers s = new Sellers(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6));
+				Sellers s = new Sellers(rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6));
 				list.add(s);
 			}
 		} catch (Exception e) {

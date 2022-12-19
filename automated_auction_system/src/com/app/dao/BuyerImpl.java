@@ -29,10 +29,9 @@ public class BuyerImpl implements BuyerDAO{
 				System.out.println("Account Successfully Created!!");
 				System.out.println("Welcome "+buyer.getName());
 			}
-			else throw new BuyersException("Please enter correct details");
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new BuyersException(e.getMessage());
+			throw new BuyersException("Please enter correct details");
 		}
 		
 	}
@@ -41,16 +40,17 @@ public class BuyerImpl implements BuyerDAO{
 	public void login(String email, String password) throws BuyersException {
 		try (Connection conn = DBUtil.provideConnection()){
 			
-			PreparedStatement ps = conn.prepareStatement("select name from users where email = ? and password = ?");
+			PreparedStatement ps = conn.prepareStatement("select * from users where email = ? and password = ?");
 			ps.setString(1, email);
 			ps.setString(2, password);
 			
 			ResultSet rs = ps.executeQuery();
-			if(rs!=null) {
+			if(rs.next()!=false) {
 				System.out.println("Welcome "+rs.getString(1));
-			} else throw new BuyersException("Invalid Credentials");
-		} catch (Exception e) {
+			} 
+		} catch (SQLException e) {
 			e.printStackTrace();
+			throw new BuyersException("Invalid Credentials");
 		}
 	}
 
@@ -67,12 +67,13 @@ public class BuyerImpl implements BuyerDAO{
 			
 			if(rs!=null) {
 				while(rs.next()) {
-					Products p = new Products(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getString(6));
+					Products p = new Products(rs.getInt(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getString(6));
 					lists.add(p);
 				}
-			} else throw new ProductsException("Please enter appropriate category");
+			} 
 		} catch (Exception e) {
 			e.printStackTrace();
+			throw new ProductsException("Please enter appropriate category");
 		}
 	}
 

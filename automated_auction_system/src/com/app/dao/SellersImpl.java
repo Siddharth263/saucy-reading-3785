@@ -20,12 +20,12 @@ public class SellersImpl implements SellersDAO{
 		
 		try (Connection conn = DBUtil.provideConnection()) {
 			
-			PreparedStatement ps = conn.prepareStatement("insert into sellers(prodId,sellernName,sellerMob,sellerEmail,sellerPassword) values(?,?,?,?,?)");
-			ps.setInt(1, seller.getProd_id());
-			ps.setString(2, seller.getSeller_name());
-			ps.setString(3, seller.getSeller_mob());
-			ps.setString(4, seller.getSeller_email());
-			ps.setString(5, seller.getseller_password());
+			PreparedStatement ps = conn.prepareStatement("insert into sellers(sellerName,sellerMob,sellerEmail,sellerPassword) values(?,?,?,?)");
+			
+			ps.setString(1, seller.getSeller_name());
+			ps.setString(2, seller.getSeller_mob());
+			ps.setString(3, seller.getSeller_email());
+			ps.setString(4, seller.getseller_password());
 			
 			int x = ps.executeUpdate();
 			

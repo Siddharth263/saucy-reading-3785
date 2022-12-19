@@ -7,9 +7,8 @@ public class Products {
 	private String category;
 	private int price;
 	private String status;
-	public Products(int prodId, int sellerId, String prodName, String category, int price, String status) {
+	public Products(int sellerId, String prodName, String category, int price, String status) {
 		super();
-		this.prodId = prodId;
 		this.sellerId = sellerId;
 		this.prodName = prodName;
 		this.category = category;
